@@ -35,3 +35,15 @@ class Vertice(object):
 
     def update_value(self, new_value):
         self.value = new_value
+
+
+    def set_edge_value_by_edge(self, edge_tuple, new_value):
+        for edge in self.conections:
+            if edge_tuple == edge.get_edge():
+                edge.set_edge_value(new_value)
+
+
+    def get_edge_value_by_edge(self, edge_tuple):
+        for edge in self.conections:
+            if edge_tuple == edge.get_edge():
+                return edge.get_edge_value()

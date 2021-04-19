@@ -93,4 +93,15 @@ class Graph:
                 if edge_tuple in vertice_edges:
                     index_to_delete = vertice_edges.index(edge_tuple)
                     del vertice.conections[index_to_delete]
-                
+    
+
+    def set_edge_value_by_edge(self, edge_tuple, new_value):
+        for vertice in self.vertices:
+            if edge_tuple in vertice.get_vertice_conections():
+                vertice.set_edge_value_by_edge(edge_tuple, new_value)
+
+
+    def get_edge_value_by_edge(self, edge_tuple):
+        for vertice in self.vertices:
+            if edge_tuple in vertice.get_vertice_conections():
+                return vertice.get_edge_value_by_edge(edge_tuple)
