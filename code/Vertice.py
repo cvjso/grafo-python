@@ -24,12 +24,11 @@ class Vertice(object):
         return self.value
 
 
-    def update_conections(self, new_conection_list):
+    def update_conections(self, new_conection_list:list, edges_values:list):
         current_node_name = self.name
-        self.conections = []
-        for vertice in new_conection_list:
-            new_edge_tuple = (current_node_name, vertice)
-            new_edge = Edge(edge_tuple=new_edge_tuple)
+        for i in range(len(new_conection_list)):
+            new_edge_tuple = (current_node_name, new_conection_list[i])
+            new_edge = Edge(edge_tuple=new_edge_tuple, value=edges_values[i])
             self.conections.append(deepcopy(new_edge))
 
 

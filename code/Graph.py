@@ -75,9 +75,9 @@ class Graph:
                 return len(list(set(conection_list)))
     
 
-    def create_vertice(self, vertice_name, conection_list=[], value=None):
-        new_vertice = Vertice(vertice_name=vertice_name, value=value)
-        new_vertice.update_conections(new_conection_list=conection_list)
+    def create_vertice(self, vertice_name, conection_list=[], edges_values:list = []):
+        new_vertice = Vertice(vertice_name=vertice_name)
+        new_vertice.update_conections(new_conection_list=conection_list, edges_values = edges_values)
         self.vertices.append(deepcopy(new_vertice))
 
 
@@ -101,7 +101,11 @@ class Graph:
     def get_graph(self):
         graph = {}
         for vertice in self.vertices:
-                graph[vertice.get_name()] = (vertice.get_vertice_conections(), vertice.get_vertice_value())
+            name = vertice.get_name()
+            graph[name] = []
+            for edge_tuple in vertice.get_vertice_conections():
+                edge_value = vertice.get_edge_value_by_edge(edge_tuple)
+                graph[name].append({edge_tuple: edge_value})
         return graph
 
     

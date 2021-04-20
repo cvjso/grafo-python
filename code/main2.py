@@ -11,7 +11,7 @@ class GraphManager:
     def add_graph(self):
         self.graphs.append(Graph())
         self.graph_index += 1
-        print("Graph added")
+        return("Graph added")
     
     def get_graph(self):
         return self.graphs[self.graph_index]
@@ -24,10 +24,10 @@ class GraphManager:
     
     def change_graph(self, new_index):
         if new_index >= len(graphs):
-            print("Index invalid")
+            return("Index invalid")
         else:
             self.graph_index
-            print("Graph Changed")
+            return("Graph Changed")
 
 Manager = GraphManager()
 OPTIONS = {
@@ -46,17 +46,36 @@ def set_interaction():
     running = True
     while(running):
         user_input = input("graph> ")
-        if user_input == exit:
+        if user_input == "exit":
             running = False
         else:
-            lista = []
-            while():
-                lista.append(str(user_input))
-                user_input = input()
+            # lista = []
+            # while():
+            #     lista.append(user_input)
+            #     user_input = input()
 
             user_input = user_input.split()
-            command = user_input[0] + " " + user_input[1]
-            OPTIONS[command]()
+            command = user_input[0].lower() + " " + user_input[1].lower()
+            if command == "create vertice":
+                """
+                (directed) create vertice A to B with ten C with two D with banana
+                (undirected) create vertice A to B C D
+                """
+                vertices_connection = []
+                edges_values = []
+                vertice_name = user_input[2]
+                if "with" in user_input:
+                    new_list = [i for i in user_input[4:] if i != "with"]
+                    i = 0
+                    while(i < len(new_list)):
+                        vertices_connection.append(new_list[i])
+                        edges_values.append(new_list[i+1])
+                        i += 2
+                    OPTIONS[command](vertice_name, vertices_connection, edges_values)
+            else:
+                print(OPTIONS[command]())
+
+
 
 
 if __name__ == '__main__':
