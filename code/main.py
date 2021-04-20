@@ -3,7 +3,7 @@ from Graph import Graph
 
 
 def main():
-    graph = Graph()
+    graph = Graph(graph_type='undirected')
 
     graph.create_vertice(vertice_name='A', conection_list=[], value="Recife")
     graph.create_vertice(vertice_name='B', conection_list=['A'], value="Fortaleza")
@@ -17,10 +17,11 @@ def main():
     # Get edges from vertice validation
     #print(graph.get_vertice_edges('A'))
     #print(graph.get_vertice_edges('A', direction='input'))
-    #print(graph.get_vertice_edges('B'))
+    print(graph.get_vertice_edges('B'))
     #print(graph.get_vertice_edges('C'))
     #print(graph.get_vertice_edges('D'))
     #print(graph.get_vertice_edges('E'))
+    #print(graph.get_vertice_edges('F'))
 
 
     # Get graph order validation
@@ -33,10 +34,11 @@ def main():
     # Get number of adjacent vertices validation
     #print(graph.get_n_vertices_by_name('B', direction='output'))
     #print(graph.get_n_vertices_by_name('B', direction='input'))
+    print(graph.get_n_vertices_by_name('B'))
 
 
     # Get graph validation
-    print(graph.get_graph())
+    #print(graph.get_graph())
 
 
     # Delete Validation
@@ -50,8 +52,8 @@ def main():
     #print(graph.get_graph_order())
 
     # Set edge value
-    graph.set_edge_value_by_edge(('C', 'A'), 1)
-    print('Resultado:')
-    print(graph.get_edge_value_by_edge(('C', 'A')))
+    #graph.set_edge_value_by_edge(('C', 'A'), 1)
+    #print('Resultado:')
+    #print(graph.get_edge_value_by_edge(('C', 'A')))
 
 main()

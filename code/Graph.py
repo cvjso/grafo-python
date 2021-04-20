@@ -16,37 +16,63 @@ class Graph:
 
 
     def get_vertice_edges(self, vertice_name, direction='output'):
-        if direction == 'output':
-            for vertice in self.vertices:
-                if vertice_name == vertice.get_name():
-                    return vertice.get_vertice_conections()
-        elif direction == 'input':
-            input_conection_list = []
-            for vertice in self.vertices:
-                if vertice_name != vertice.get_name():
-                    for edges in vertice.get_vertice_conections():
-                        if vertice_name in edges:
-                            input_conection_list.append(edges)
-            return input_conection_list
+        if vertice_name not in self.get_graph_vertices():
+            return None
 
-        return None
+        if self.graph_type == 'directed':
+            if direction == 'output':
+                for vertice in self.vertices:
+                    if vertice_name == vertice.get_name():
+                        return vertice.get_vertice_conections()
+            elif direction == 'input':
+                input_conection_list = []
+                for vertice in self.vertices:
+                    if vertice_name != vertice.get_name():
+                        for edges in vertice.get_vertice_conections():
+                            if vertice_name in edges:
+                                input_conection_list.append(edges)
+                return input_conection_list
+        
+        elif self.graph_type == 'undirected':
+            conection_list = []
+            for vertice in self.vertices:
+                for edges in vertice.get_vertice_conections():
+                    if vertice_name in edges:
+                        conection_list.append(edges)
+
+            for edge in range(len(conection_list)):
+                conection_list[edge] = tuple(i for i in sorted(conection_list[edge]))
+            return list(set(conection_list))
 
 
     def get_n_vertices_by_name(self, vertice_name, direction='output'):
-        if direction == 'output':
-            for vertice in self.vertices:
-                if vertice_name == vertice.get_name():
-                    return len(vertice.get_vertice_conections())
-        elif direction == 'input':
-            input_conection_list = []
-            for vertice in self.vertices:
-                if vertice_name != vertice.get_name():
+        if vertice_name not in self.get_graph_vertices():
+            return None
+
+        if self.graph_type == 'directed':
+            if direction == 'output':
+                for vertice in self.vertices:
+                    if vertice_name == vertice.get_name():
+                        return len(vertice.get_vertice_conections())
+            elif direction == 'input':
+                input_conection_list = []
+                for vertice in self.vertices:
+                    if vertice_name != vertice.get_name():
+                        for edges in vertice.get_vertice_conections():
+                            if vertice_name in edges:
+                                input_conection_list.append(edges)
+                return len(input_conection_list)
+        
+        elif self.graph_type == 'undirected':
+                conection_list = []
+                for vertice in self.vertices:
                     for edges in vertice.get_vertice_conections():
                         if vertice_name in edges:
-                            input_conection_list.append(edges)
-            return len(input_conection_list)
-
-        return None
+                            conection_list.append(edges)
+                
+                for edge in range(len(conection_list)):
+                    conection_list[edge] = tuple(i for i in sorted(conection_list[edge]))
+                return len(list(set(conection_list)))
     
 
     def create_vertice(self, vertice_name, conection_list=[], value=None):
