@@ -15,7 +15,7 @@ class Graph:
         return vertice_list
 
 
-    def get_vertice_edges(self, vertice_name, direction='output'):
+    def get_vertice_edges(self, vertice_name, direction='all'):
         if vertice_name not in self.get_graph_vertices():
             return None
 
@@ -31,6 +31,17 @@ class Graph:
                         for edges in vertice.get_vertice_conections():
                             if vertice_name in edges:
                                 input_conection_list.append(edges)
+                return input_conection_list
+            else:
+                input_conection_list = []
+                for vertice in self.vertices:
+                    if vertice_name != vertice.get_name():
+                        for edges in vertice.get_vertice_conections():
+                            if vertice_name in edges:
+                                input_conection_list.append(edges)
+                for vertice in self.vertices:
+                    if vertice_name == vertice.get_name():
+                        input_conection_list += vertice.get_vertice_conections()
                 return input_conection_list
         
         elif self.graph_type == 'undirected':
@@ -76,7 +87,7 @@ class Graph:
     
 
     def create_vertice(self, vertice_name, conection_list=[], edges_values:list = []):
-        new_vertice = Vertice(vertice_name=vertice_name)
+        new_vertice = Vertice(vertice_name=vertice_name, conections=[])
         new_vertice.update_conections(new_conection_list=conection_list, edges_values = edges_values)
         self.vertices.append(deepcopy(new_vertice))
 
@@ -99,13 +110,14 @@ class Graph:
 
     
     def get_graph(self):
-        graph = {}
+        graph = ""
         for vertice in self.vertices:
             name = vertice.get_name()
-            graph[name] = []
+            graph += name + ":"
             for edge_tuple in vertice.get_vertice_conections():
                 edge_value = vertice.get_edge_value_by_edge(edge_tuple)
-                graph[name].append({edge_tuple: edge_value})
+                graph += f"\n\t{edge_value} -> {edge_tuple[1]}"
+            graph+="\n"
         return graph
 
     

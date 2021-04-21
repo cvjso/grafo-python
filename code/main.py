@@ -5,17 +5,16 @@ from Graph import Graph
 def main():
     graph = Graph(graph_type='undirected')
 
-    graph.create_vertice(vertice_name='A', conection_list=[], value="Recife")
-    graph.create_vertice(vertice_name='B', conection_list=['A'], value="Fortaleza")
-    graph.create_vertice(vertice_name='C', conection_list=['A','B'], value="Maceio")
-    graph.create_vertice(vertice_name='D', conection_list=['A','B', 'C'], value="Minas Gerais")
-    graph.create_vertice(vertice_name='E', conection_list=[], value="Sao Paulo")
+    graph.create_vertice(vertice_name='A', conection_list=[])
+    graph.create_vertice(vertice_name='B', conection_list=['A'], edges_values=["Fortaleza"])
+    graph.create_vertice(vertice_name='C', conection_list=['A','B'], edges_values=["Maceio", "São Paulo"])
+    graph.create_vertice(vertice_name='D', conection_list=['A','B', 'C'], edges_values=["Minas Gerais", "São bernado", "Campo Grande"])
 
     # Get vertices names validation
     #print(graph.get_graph_vertices())
 
     # Get edges from vertice validation
-    #print(graph.get_vertice_edges('A'))
+    # print(graph.get_vertice_edges('A'))
     #print(graph.get_vertice_edges('A', direction='input'))
     print(graph.get_vertice_edges('B'))
     #print(graph.get_vertice_edges('C'))
@@ -34,11 +33,11 @@ def main():
     # Get number of adjacent vertices validation
     #print(graph.get_n_vertices_by_name('B', direction='output'))
     #print(graph.get_n_vertices_by_name('B', direction='input'))
-    print(graph.get_n_vertices_by_name('B'))
+    # print(graph.get_n_vertices_by_name('B'))
 
 
     # Get graph validation
-    #print(graph.get_graph())
+    print(graph.get_graph())
 
 
     # Delete Validation
