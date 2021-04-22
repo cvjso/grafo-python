@@ -24,7 +24,7 @@ def main():
 
 
     # Get graph order validation
-    #print(graph.get_graph_order())
+    print(graph.get_graph_order())
 
     # Get vertice value validation
     #print(graph.get_vertice_value_by_name('C'))
@@ -37,7 +37,8 @@ def main():
 
 
     # Get graph validation
-    print(graph.get_graph())
+    # print(graph.get_graph())
+    print(graph.get_graph_vertices)
 
 
     # Delete Validation

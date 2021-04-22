@@ -3,7 +3,8 @@ from copy import deepcopy
 
 class Graph:
 
-    def __init__(self, graph_type='directed', vertices_list=[]):
+    def __init__(self, graph_type='directed', vertices_list=[], graph_id=0):
+        self.id = graph_id
         self.graph_type = graph_type
         self.vertices = vertices_list
     
@@ -87,9 +88,18 @@ class Graph:
     
 
     def create_vertice(self, vertice_name, conection_list=[], edges_values:list = []):
+        all_vertices = [vertice.name for vertice in self.vertices]
+        if vertice_name in all_vertices:
+            raise Exception("Vertice already exists")
         new_vertice = Vertice(vertice_name=vertice_name, conections=[])
         new_vertice.update_conections(new_conection_list=conection_list, edges_values = edges_values)
         self.vertices.append(deepcopy(new_vertice))
+        # Conecto o vertice depois de criado nos outros vertices
+        if self.graph_type == "undirected":
+            for vertice in self.vertices:
+                if vertice.name in conection_list:
+                    index_value = conection_list.index(vertice.name)
+                    vertice.update_conections(new_conection_list=[vertice_name], edges_values= [edges_values[index_value]])
 
 
     def get_graph_order(self):
