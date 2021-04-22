@@ -142,5 +142,21 @@ Classe Vertice:
 
     Retorna o nome da aresta
 
+Classe Edge:
+- get_edge()
+    - Parametros:
+        Nenhum
 
+    retorna a aresta
 
+- get_edge_value()
+    - Parametros:
+        nenhum
+
+    retorna o valor da aresta
+
+- set_edge_value(value)
+    - Parametros:
+        value: valor que vai ser atribuido a aresta
+    
+    setta um valor para a aresta
