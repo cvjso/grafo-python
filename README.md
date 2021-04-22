@@ -5,16 +5,16 @@ Sistema de criação e visualização de grafos feito em python
 # Classes
 O codigo é divido entre classe principal e classes secundarias.
 
-Classe principal: Graph
+- Classe principal: Graph
     - Todo o projeto é instanciado por essa classe onde são feitas as adições das demais classes.
-    - Dentro da classe são feitas: - as criação dos vertices
+    - Dentro da classe são feitas: as criação dos vertices
                                    - criação das arestas
                                    - a ordem do grafo
                                    - o tamanho do grafo
                                    - retorno dos vertices
                                    - retorno do grafo
 
-Classes Secundarias: Vertice e Edge
+- Classes Secundarias: Vertice e Edge
     - Após instaciado o grafo pela classe Graph nós precisamos dar um nome para os vertices e arestas, então é criado permeiro a classe Vertice onde é feito todo e qualquer tipo de atribuição de valores para o vertice e após é criado a classe Edge onde que é feito uma atribuição de valores entre dois vertices.
 
 # Metodos
@@ -82,3 +82,65 @@ Classe Graph:
         vertice_name: nome do vertice que vai ser excluido do grafo
 
     exclui o vertice e suas conecções no grafo
+
+- set_edge_value_by_edge(edge_tuple, new_value)
+    - Parametros:
+        edge_tuple: Tupla que contem os dois vertices que sua arestao possuira um novo valor
+
+        new_value: Nome da nova aresta
+
+    Setta o novo valor para a aresta
+
+- get_edge_value_by_edge(edge_tuple)
+    - Parametros:
+        edge_tuple: Tupla que contem os dois vertices
+
+    Retorna o nome da aresta
+
+Classe Vertice:
+- get_name(self):
+    - Parametros:
+        nenhum
+    
+    retorna o vertice
+
+- get_vertice_conections(self)
+    - Parametros:
+        nenhum
+    
+    retorna as arestas relacionado ao vertice
+
+- get_vertice_value(self)
+    - Parametros:
+        nenhum
+
+    Retorna o valor atribuido para aquele vertice
+
+- ?update_conections(self, new_conection_list:list, edges_values:list)
+    - Parametros:
+        new_conection_list:
+
+        edges_values:
+
+- update_value(self, new_value)
+    - Parametros:
+        new_value: Novo valor para o vertice
+    
+    setta um novo valor para aquele vertice
+
+- set_edge_value_by_edge(edge_tuple, new_value)
+    - Parametros:
+        edge_tuple: Tupla que contem os dois vertices que sua arestao possuira um novo valor
+
+        new_value: Nome da nova aresta
+
+    Setta o novo valor para a aresta
+
+- get_edge_value_by_edge(edge_tuple)
+    - Parametros:
+        edge_tuple: Tupla que contem os dois vertices
+
+    Retorna o nome da aresta
+
+
+
