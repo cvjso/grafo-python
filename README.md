@@ -29,6 +29,13 @@ Classe Graph:
     
     Retorna uma lista de todos os vertices pertencentes ao grafo
 
+- is_vertices_adjacents(vertice_one, vertice_two)
+    - Parametros:
+        vertice_one: Primeiro vertice da comparação
+        vertice_two: Segundo vertice da comparação
+
+    retorna verdadeiro caso os vertices sejam adjacentes e falso caso nao
+
 - get_vertice_edges(vertice_name,direction='output'):
     - Parametros:
         vertice_name: nome do vertice que queira procurar as conecções dele
@@ -102,31 +109,25 @@ Classe Graph:
     Retorna o nome da aresta
 
 Classe Vertice:
-- get_name(self):
+- get_name():
     - Parametros:
         nenhum
     
     retorna o vertice
 
-- get_vertice_conections(self)
+- get_vertice_conections()
     - Parametros:
         nenhum
     
     retorna as arestas relacionado ao vertice
 
-- get_vertice_value(self)
+- get_vertice_value()
     - Parametros:
         nenhum
 
     Retorna o valor atribuido para aquele vertice
 
-- ?update_conections(self, new_conection_list:list, edges_values:list)
-    - Parametros:
-        new_conection_list:
-
-        edges_values:
-
-- update_value(self, new_value)
+- update_value(, new_value)
     - Parametros:
         new_value: Novo valor para o vertice
     
