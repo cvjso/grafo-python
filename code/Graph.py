@@ -15,8 +15,14 @@ class Graph:
             vertice_list.append(vertice.get_name())
         return vertice_list
 
+    def is_vertices_adjacents(self, vertice_one:str, vertice_two:str):
+        edges = self.get_vertice_edges(vertice_one)
+        for edge in edges:
+            if tuple((vertice_one, vertice_two)) == edge or tuple((vertice_two, vertice_one)) == edge:
+                return True
+        return False
 
-    def get_vertice_edges(self, vertice_name, direction='all'):
+    def get_vertice_edges(self, vertice_name, direction='all') -> list:
         if vertice_name not in self.get_graph_vertices():
             return None
 
@@ -52,12 +58,12 @@ class Graph:
                     if vertice_name in edges:
                         conection_list.append(edges)
 
-            for edge in range(len(conection_list)):
-                conection_list[edge] = tuple(i for i in sorted(conection_list[edge]))
+            for index in range(len(conection_list)):
+                conection_list[index] = tuple(i for i in sorted(conection_list[index]))
             return list(set(conection_list))
 
-
-    def get_n_vertices_by_name(self, vertice_name, direction='output'):
+    # Grau do vertice
+    def get_n_vertices_by_name(self, vertice_name, direction='output') -> int:
         if vertice_name not in self.get_graph_vertices():
             return None
 
@@ -116,6 +122,8 @@ class Graph:
         size = 0
         for vertice in self.vertices:
                 size += len(vertice.get_vertice_conections())
+        if self.graph_type == "undirected":
+            size = size//2
         return size
 
     
@@ -147,10 +155,21 @@ class Graph:
                     del vertice.conections[index_to_delete]
     
 
-    def set_edge_value_by_edge(self, edge_tuple, new_value):
-        for vertice in self.vertices:
-            if edge_tuple in vertice.get_vertice_conections():
-                vertice.set_edge_value_by_edge(edge_tuple, new_value)
+    def set_edge_value_by_edge(self, vertice_one, vertice_two, new_value):
+        if self.graph_type == "directed":
+            edge_tuple = tuple((vertice_one, vertice_two))
+            for vertice in self.vertices:
+                if edge_tuple in vertice.get_vertice_conections():
+                    vertice.set_edge_value_by_edge(edge_tuple, new_value)
+        else:
+            edge_tuple = tuple((vertice_one, vertice_two))
+            seg_edge = tuple((vertice_two, vertice_one))
+            for vertice in self.vertices:
+                if edge_tuple in vertice.get_vertice_conections():
+                    vertice.set_edge_value_by_edge(edge_tuple, new_value)
+                if seg_edge in vertice.get_vertice_conections():
+                    vertice.set_edge_value_by_edge(seg_edge, new_value)
+        return "updated edge"
 
 
     def get_edge_value_by_edge(self, edge_tuple):
