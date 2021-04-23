@@ -57,6 +57,9 @@ class GraphManager:
     def set_edge_value_by_edge(self, *args, **kwargs):
         return self.get_act_graph().set_edge_value_by_edge(*args,**kwargs)
     
+    def get_graph_size(self, *args, **kwargs):
+        return self.get_act_graph().get_graph_size(*args,**kwargs)
+    
 
 Manager = GraphManager()
 OPTIONS = {
@@ -70,7 +73,8 @@ OPTIONS = {
     "vertices": Manager.get_graph_vertices,
     "degree": Manager.get_n_vertices_by_name,
     "adjacents vertices": Manager.is_vertices_adjacents,
-    "set edge": Manager.set_edge_value_by_edge
+    "set edge": Manager.set_edge_value_by_edge,
+    "size":Manager.get_graph_size
 }
 
 
@@ -92,13 +96,13 @@ get graphs -> mostra todos os grafos existentes
 --- vertices ---
 (valorado) create vertice X to Y with Z -> X é o nome do vertice, Y o nome do vertice que será relacionado e Z o valor da aresta
 (não valorado) create vertice X to Y -> X é o nome do vertice e Y o nome do vertice que será relacionado
-vertices -> mostra todos os vertices que o grafo possui
 adjacents vertices X Y -> retorna se os vertices X e Y são adjacentes
 
 --- edges ---
 get edges X -> mostra as arestas da aresta X
 degree X (input | output) -> X é o nome do vertice
 order -> ordem do grafo
+size -> tamanho do grafo
 set edge X Y Z -> X e Y são os vertices da aresta e Z é o novo valor que a aresta terá
     """
 
@@ -116,6 +120,10 @@ set edge X Y Z -> X e Y são os vertices da aresta e Z é o novo valor que a are
         command = "set edge"
         print(OPTIONS[command](user_input[1], user_input[2], user_input[3]))
 
+    def do_size(self, user_input):
+        user_input = user_input.split()
+        command = "size"
+        print(OPTIONS[command]())
     
     def do_adjacents(self, user_input):
         user_input = user_input.split()
