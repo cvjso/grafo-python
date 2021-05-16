@@ -3,17 +3,15 @@
 ## **Índice:**  
 
 [Intro](#Intro)  
-[Como rodar a API?](##Como-rodar-a-API?)  
+[Como rodar a API?](#Como-rodar-a-API?)  
 [Estrutura do código](#Estrutura-do-código)  
-
-[Classes](##Classes)  
-- [Classe Graph](###Classe-Graph)  
-- [Classes Vertice e Edge](###Classes-Vertice-e-Edge)  
-
-[Métodos](##Métodos)  
-- [Métodos da classe Graph](###Métodos-da-classe-Graph)  
-- [Métodos da classe Vertice](###Métodos-da-classe-Vertice)  
-- [Métodos da classe Edge](###Métodos-da-classe-Edge)  
+[Classes](#Classes)  
+[Classe Graph](#Classe-Graph)  
+[Classes Vertice e Edge](#Classes-Vertice-e-Edge)  
+[Métodos](#Métodos)  
+[Métodos da classe Graph](#Métodos-da-classe-Graph)  
+[Métodos da classe Vertice](#Métodos-da-classe-Vertice)  
+[Métodos da classe Edge](#Métodos-da-classe-Edge)  
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
