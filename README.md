@@ -1,16 +1,19 @@
 # **Projeto Grafos**
 
+## **Índice:**  
+
 [Intro](#Intro)  
-[Coleta e análise de dados](##Como-rodar-a-API?)  
+[Como rodar a API?](##Como-rodar-a-API?)  
 [Estrutura do código](#Estrutura-do-código)  
+
 [Classes:](##Classes)  
-- [Classe principal: Graph](###Classe-principal:-Graph)  
-- [Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
+[Classe principal: Graph](###Classe-principal:-Graph)  
+[Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
 
 [Métodos:](##Métodos)  
-- [Métodos da classe Graph](###Métodos-da-classe-Graph:)  
-- [Métodos da classe Vertice](###Métodos-da-classe-Vertice:)  
-- [Métodos da classe Edge](###Métodos-da-classe-Edge:)  
+[Métodos da classe Graph](###Métodos-da-classe-Graph:)  
+[Métodos da classe Vertice](###Métodos-da-classe-Vertice:)  
+[Métodos da classe Edge](###Métodos-da-classe-Edge:)  
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
