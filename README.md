@@ -7,8 +7,8 @@
 [Estrutura do código](#Estrutura-do-código)  
 
 [Classes](##Classes)  
-- [Classe principal: Graph](###Classe-principal:-Graph)  
-- [Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
+- [Classe Graph](###Classe-Graph)  
+- [Classes Vertice e Edge](###Classes-Vertice-e-Edge)  
 
 [Métodos](##Métodos)  
 - [Métodos da classe Graph](###Métodos-da-classe-Graph)  
@@ -36,7 +36,7 @@ O código foi estruturado de uma forma que tivesse uma alta escalabilidade para 
 
 O código pode ser divido entre as seguintes classes:
 
-### **Classe principal: Graph** 
+### **Classe Graph** 
 
 Todo o projeto é instanciado ela, onde são feitas as adições das demais classes. Fica resposável pelas seguintes atividades:  
 * Criar os Vértices;
@@ -46,7 +46,7 @@ Todo o projeto é instanciado ela, onde são feitas as adições das demais clas
 * Retornar os valores dos vértices;
 * Retornar o grafo.
 
-### **Classes Secundárias: Vertice e Edge**
+### **Classes Vertice e Edge**
 
 Após instaciada a classe Graph é possível dar um nome para os vértices e arestas, para isso, é criado primeiro um objeto Vertice, o qual é responsável pela atribuição de valores para o vertice, incluindo a criação dos objetos Edge, que guardam os valores referentes a uma aresta do grafo.
 
