@@ -1,5 +1,8 @@
 # **Projeto Grafos**
 
+![](https://img.shields.io/github/issues/cvjso/grafo-python) [![](https://img.shields.io/badge/Python-v3.7-blue)](https://www.python.org/)
+
+
 ## **Índice:**  
 
 [Intro](#Intro)  
