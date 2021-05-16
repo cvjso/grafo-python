@@ -5,14 +5,15 @@
 [Intro](#Intro)  
 [Como rodar a API?](##Como-rodar-a-API?)  
 [Estrutura do código](#Estrutura-do-código)  
-[Classes:](##Classes:)  
+
+[Classes](##Classes)  
 - [Classe principal: Graph](###Classe-principal:-Graph)  
 - [Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
 
-[Métodos:](##Métodos:)  
-- [Métodos da classe Graph](###Métodos-da-classe-Graph:)  
-- [Métodos da classe Vertice](###Métodos-da-classe-Vertice:)  
-- [Métodos da classe Edge](###Métodos-da-classe-Edge:)  
+[Métodos](##Métodos)  
+- [Métodos da classe Graph](###Métodos-da-classe-Graph)  
+- [Métodos da classe Vertice](###Métodos-da-classe-Vertice)  
+- [Métodos da classe Edge](###Métodos-da-classe-Edge)  
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
@@ -31,7 +32,7 @@ Projeto desenvolvido em Python com o objetivo de entregar uma API capaz de criar
 
 O código foi estruturado de uma forma que tivesse uma alta escalabilidade para futuras implementações. Com isso em mente foi escolhido adotar uma estratégia de programação orientada a objetos para que fosse possível dividir a estrutura do código de maneira mais acoplável para novas classes. Atualmente a API conta com as seguintes classes:  
 
-## **Classes:**
+## **Classes**
 
 O código pode ser divido entre as seguintes classes:
 
@@ -51,9 +52,9 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
-## **Métodos:**
+## **Métodos**
 
-### **Métodos da classe Graph:**  
+### **Métodos da classe Graph**  
 
 - get_graph_vertices():
     - Parametros:
@@ -142,7 +143,7 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
-### **Métodos da classe Vertice:**
+### **Métodos da classe Vertice**
 - get_name():
     - Parametros:
         nenhum
@@ -183,7 +184,7 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
-### **Métodos da classe Edge:**  
+### **Métodos da classe Edge**  
 
 - get_edge()
     - Parametros:
