@@ -56,150 +56,135 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 
 ### **Métodos da classe Graph**  
 
-- get_graph_vertices():
-    - Parametros:
-        nenhum
+- **get_graph_vertices( ):**
+    - **Parâmetros:**  
+        - nenhum;
     
-    Retorna uma lista de todos os vertices pertencentes ao grafo
+    - **Descrição:** Retorna uma lista de todos os vertices pertencentes ao grafo.
 
-- is_vertices_adjacents(vertice_one, vertice_two)
-    - Parametros:
-        vertice_one: Primeiro vertice da comparação
-        vertice_two: Segundo vertice da comparação
+- **is_vertices_adjacents(Vertice vertice_one, Vertice vertice_two):**
+    - **Parâmetros:**  
+        - vertice_one: Primeiro vertice da comparação;  
+        - vertice_two: Segundo vertice da comparação;
 
-    retorna verdadeiro caso os vertices sejam adjacentes e falso caso nao
+    - **Descrição:** Retorna verdadeiro caso os vértices sejam adjacentes e falso contrário.
 
-- get_vertice_edges(vertice_name,direction='output'):
-    - Parametros:
-        vertice_name: nome do vertice que queira procurar as conecções dele
+- **get_vertice_edges(string vertice_name, string direction='output'):**
+    - **Parâmetros:**  
+        - vertice_name: Nome do vértice desejado;
+        - direction: Caso queira saber se o vértice possui arestas de chegada e/ou de saida em um grafo direcionado. Por default o valor é 'output', que retorna os vértices de saída;
 
-        direction: caso queira saber se o vertice ele possua arestas de chegada ou de saida (num grafo direcionado)
-        Default: output(saida)
+    - **Descrição:** Retorna uma lista de tuplas contendo as arestas que conectam aquele vertice com outros
 
-    Retorna uma lista de tuplas contendo as arestas que conectam aquele vertice com outros
+- **get_n_vertices_by_name(string vertice_name, string direction='output'):**
+    - **Parâmetros:**  
+        - vertice_name: Nome do vértice desejado;
+        - direction: Caso queira saber se o vértice possui arestas de chegada e/ou de saida em um grafo direcionado. Por default o valor é 'output', que retorna os vértices de saída;
+    - **Descrição:** Retorna o tamanho das arestas que conectam aquele vertice com outros.
 
-- get_n_vertices_by_name(vertice_name, direction='output')
-    - Parametros:
-        vertice_name: nome do vertice que queira procurar a quantidade de conecções dele
+- **create_vertice(vertice_name, conection_list=[], edges_values:list = []):**
+    - **Parâmetros:**  
+        - vertice_name: Nome que vai ser atribuído ao vértice;
+        - conection_list: Lista de vértices que vão ser conectados ao vértice;
+        - edges_values: se o vertice possuira um nome em especifico.
+    - **Descrição:** Cria um vértice.
 
-        direction: caso queira saber se o vertice ele possua arestas de chegada ou de saida (num grafo direcionado)
-        Default: output(saida)
+- **get_graph_order():**
+    - **Parâmetros:**  
+        - nenhum
+   - **Descrição:** Retorna o ordem do grafo
 
-    Retorna o tamanho das arestas que conectam aquele vertice com outros
+- **get_vertice_value_by_name(string vertice_name)**
+    - **Parâmetros:**  
+        - vertice_name: Nome do vertice que será buscado.
+    - **Descrição:** Retorna o valor do vértice.
 
-- create_vertice(vertice_name, conection_list=[], edges_values:list = [])
-    - Parametros:
-        vertice_name: nome que vai ser atribuido ao vetice
+- **get_graph_size()**
+    - **Parâmetros:**  
+        - Nenhum
+    - **Descrição:** Retorna o tamanho do grafo.
 
-        conection_list: lista de vertices que vao ser conectados com esse vertice
+- **get_graph():**
+    - **Parâmetros:**  
+        - nenhum
+    - **Descrição:** Retorna o grafo completo.
 
-        edges_values: se o vertice possuira um nome em especifico
+- **delete_vertice_by_name(string vertice_name):**
+    - **Parâmetros:**  
+        - vertice_name: nome do vértice.
+    - **Descrição:** Exclui o vértice e suas conexões do grafo.
 
-    Cria o vertice
+- **set_edge_value_by_edge(tuple edge_tuple, new_value):**
+    - **Parâmetros:**  
+        - edge_tuple: Tupla que contém os dois vértices que definem a aresta;
+        - new_value: Valor para a aresta.
+    - **Descrição:** Define um novo valor para a aresta.
 
-- get_graph_order()
-    - Parametros:
-        nenhum
-
-    Retorna o ordem do grafo
-
-- get_vertice_value_by_name(vertice_name)
-    - Parametros:
-        vertice_name: Nome do vertice que queremos procurar
-
-    Retorna o valor do vertice
-
-- get_graph_size()
-    - Parametros:
-        nenhum
-
-    Retorna o tamnha do grafo
-
-- get_graph()
-    - Parametros:
-        nenhum
-    
-    Retorna todo grafo
-
-- delete_vertice_by_name(vertice_name)
-    - Parametros:
-        vertice_name: nome do vertice que vai ser excluido do grafo
-
-    exclui o vertice e suas conecções no grafo
-
-- set_edge_value_by_edge(edge_tuple, new_value)
-    - Parametros:
-        edge_tuple: Tupla que contem os dois vertices que sua arestao possuira um novo valor
-
-        new_value: Nome da nova aresta
-
-    Setta o novo valor para a aresta
-
-- get_edge_value_by_edge(edge_tuple)
-    - Parametros:
-        edge_tuple: Tupla que contem os dois vertices
-
-    Retorna o nome da aresta
+- **get_edge_value_by_edge(tuple edge_tuple):**
+    - **Parâmetros:**  
+        - edge_tuple: Tupla que contém os dois vertices que definem a aresta.
+    - **Descrição:** Retorna o valor da aresta.
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
 ### **Métodos da classe Vertice**
-- get_name():
-    - Parametros:
-        nenhum
-    
-    retorna o vertice
+- **get_name():**
+    - **Parâmetros:**  
+        - nenhum
+    - **Descrição:** Retorna o vértice.
 
-- get_vertice_conections()
-    - Parametros:
-        nenhum
-    
-    retorna as arestas relacionado ao vertice
+- **get_vertice_conections():**
+    - **Parâmetros:**  
+        - nenhum
+    - **Descrição:** Retorna as arestas relacionadas ao vertice.
 
-- get_vertice_value()
-    - Parametros:
-        nenhum
+- **get_vertice_value():**
+    - **Parâmetros:**  
+        - nenhum
+    - **Descrição:** Retorna o valor atribuido ao vértice.
 
-    Retorna o valor atribuido para aquele vertice
+- **update_value(, new_value)**
+    - **Parâmetros:**  
+        - new_value: Novo valor para o vértice.
+    - **Descrição:** Define um novo valor para o vértice.
 
-- update_value(, new_value)
-    - Parametros:
-        new_value: Novo valor para o vertice
-    
-    setta um novo valor para aquele vertice
+- **set_edge_value_by_edge(tuple edge_tuple, new_value):**
+    - **Parâmetros:**  
+        - edge_tuple: Tupla que contém os dois vertices que definem uma aresta;
+        - new_value: Novo valor da aresta.
 
-- set_edge_value_by_edge(edge_tuple, new_value)
-    - Parametros:
-        edge_tuple: Tupla que contem os dois vertices que sua arestao possuira um novo valor
+    - **Descrição:** Define o novo valor para a aresta.
 
-        new_value: Nome da nova aresta
-
-    Setta o novo valor para a aresta
-
-- get_edge_value_by_edge(edge_tuple)
-    - Parametros:
-        edge_tuple: Tupla que contem os dois vertices
-
-    Retorna o nome da aresta
+- **get_edge_value_by_edge(tuple edge_tuple)**
+    - **Parâmetros:**  
+        - edge_tuple: Tupla que contém os dois vértices.
+    - **Descrição:** Retorna o valor da aresta.
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
 ### **Métodos da classe Edge**  
 
-- get_edge()
-    - Parametros:
-        Nenhum
+- **get_edge():**
+    - **Parâmetros:**  
+        - Nenhum
 
-    retorna a aresta
+    - **Descrição:** retorna a aresta
 
-- get_edge_value()
-    - Parametros:
-        nenhum
+- **get_edge_value():**
+    - **Parâmetros:**  
+        - nenhum
 
-    retorna o valor da aresta
+    - **Descrição:** Retorna o valor da aresta.
 
-- set_edge_value(value)
-    - Parametros:
-        value: valor que vai ser atribuido a aresta
+- **set_edge_value(value):**
+    - **Parâmetros:**  
+        - value: valor que vai ser atribuido a aresta
     
-    setta um valor para a aresta
+    - **Descrição:** Define um novo valor para a aresta.
+
+
+# **Banco de horas**  
+
+Para o desenvolvimento da segunda atividade foi criada uma nova planilha com as horas de cada contribuidor em cada atividade. No final do projeto a tabela ficou da seguinte forma:  <br></br>
+
+![](./assets/banco_de_horas.png)
