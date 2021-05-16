@@ -1,28 +1,58 @@
-# grafo-python
-Sistema de criação e visualização de grafos feito em python
+# **Projeto Grafos**
 
-# Rodar projeto
+[Intro](#Intro)  
+[Coleta e análise de dados](##Como-rodar-a-API?)  
+[Estrutura do código](#Estrutura-do-código)  
+[Classes:](##Classes)  
+- [Classe principal: Graph](###Classe-principal:-Graph)  
+- [Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
+
+[Métodos:](##Métodos)  
+- [Métodos da classe Graph](###Métodos-da-classe-Graph:)  
+- [Métodos da classe Vertice](###Métodos-da-classe-Vertice:)  
+- [Métodos da classe Edge](###Métodos-da-classe-Edge:)  
+
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+# **Intro**
+
+Projeto desenvolvido em Python com o objetivo de entregar uma API capaz de criar, modificar e analisar grafos. Durante a primeira etapa do projeto foi realizada a estrutura base da aplicação, com a possibilidade de criação, manipulação e visualização dos valores em um grafos. Para a segunda fase desenvolvemos um algoritmo de Dijkstra para encontrar o menor caminho entre os vértices de um grafo.
+
+## **Como rodar a API?**
 - Entre na pasta code dentro do repositório
 - Execute no terminal python3 main.py
 - Execute o comando `help` para mais informações
 
-# Classes
-O codigo é divido entre classe principal e classes secundarias.
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
-- Classe principal: Graph
-    - Todo o projeto é instanciado por essa classe onde são feitas as adições das demais classes.
-    - Dentro da classe são feitas: as criação dos vertices
-                                   - criação das arestas
-                                   - a ordem do grafo
-                                   - o tamanho do grafo
-                                   - retorno dos vertices
-                                   - retorno do grafo
+# Estrutura do código  
 
-- Classes Secundarias: Vertice e Edge
-    - Após instaciado o grafo pela classe Graph nós precisamos dar um nome para os vertices e arestas, então é criado permeiro a classe Vertice onde é feito todo e qualquer tipo de atribuição de valores para o vertice e após é criado a classe Edge onde que é feito uma atribuição de valores entre dois vertices.
+O código foi estruturado de uma forma que tivesse uma alta escalabilidade para futuras implementações. Com isso em mente foi escolhido adotar uma estratégia de programação orientada a objetos para que fosse possível dividir a estrutura do código de maneira mais acoplável para novas classes. Atualmente a API conta com as seguintes classes:  
 
-# Metodos
-Classe Graph:
+## **Classes:**
+
+O código pode ser divido entre as seguintes classes:
+
+### **Classe principal: Graph** 
+
+Todo o projeto é instanciado ela, onde são feitas as adições das demais classes. Fica resposável pelas seguintes atividades:  
+* Criar os Vértices;
+* Criar as Arestas;
+* Retornar a ordem do grafo;
+* Retornar o tamanho do grafo;
+* Retornar os valores dos vértices;
+* Retornar o grafo.
+
+### **Classes Secundárias: Vertice e Edge**
+
+Após instaciada a classe Graph é possível dar um nome para os vértices e arestas, para isso, é criado primeiro um objeto Vertice, o qual é responsável pela atribuição de valores para o vertice, incluindo a criação dos objetos Edge, que guardam os valores referentes a uma aresta do grafo.
+
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+## **Métodos:**
+
+### **Métodos da classe Graph:**  
+
 - get_graph_vertices():
     - Parametros:
         nenhum
@@ -108,7 +138,9 @@ Classe Graph:
 
     Retorna o nome da aresta
 
-Classe Vertice:
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+### **Métodos da classe Vertice:**
 - get_name():
     - Parametros:
         nenhum
@@ -147,7 +179,10 @@ Classe Vertice:
 
     Retorna o nome da aresta
 
-Classe Edge:
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+### **Métodos da classe Edge:**  
+
 - get_edge()
     - Parametros:
         Nenhum
