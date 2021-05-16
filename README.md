@@ -5,7 +5,6 @@
 [Intro](#Intro)  
 [Como rodar a API?](##Como-rodar-a-API?)  
 [Estrutura do código](#Estrutura-do-código)  
-
 [Classes:](##Classes:)  
 - [Classe principal: Graph](###Classe-principal:-Graph)  
 - [Classes Secundárias: Vertice e Edge](###Classes-Secundárias:-Vertice-e-Edge)  
