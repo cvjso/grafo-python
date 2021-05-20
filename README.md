@@ -243,7 +243,16 @@ while(lista_ordem != []):
 			targeted_vert_val = val_vert + edge_val;
 
 	lista_ordem.pop(0) #remover primeiro elemento da lista para não entrar em loop infinito; 
-```
+```  
+
+
+Na prática, escrevemos na shell que foi criada no projeto para:  
+* Executar o comando 'help' para ver lista de comandos;
+* Criar um grafo;
+* Executar o algoritmo de Dijskra.  <br></br>
+
+
+![](./assets/graph.gif)  
 
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
