@@ -8,6 +8,51 @@ class Graph:
         self.graph_type = graph_type
         self.vertices = vertices_list
     
+    def distance_dj(self,start, end = None):
+        lista_ordem = [start]
+        start_vertice = self._get_vertice_by_name(start)
+        start_vertice.update_value(0)
+
+        while(lista_ordem != []):
+            actual_vertice = self._get_vertice_by_name(lista_ordem[0])
+            inital_connections = actual_vertice.conections
+            for edge in inital_connections:
+                val_vert = actual_vertice.value
+                target_val = self.get_vertice_value_by_name(edge.get_edge()[1])
+                edge_val = edge.value
+                target_vert_name = edge.get_edge()[1]
+                lista_ordem.append(target_vert_name)
+
+                if (target_val == None or (val_vert + edge_val) < target_val):
+                    target = self._get_vertice_by_name(target_vert_name)
+                    target.update_value(val_vert + edge_val)
+                    target.set_origin(actual_vertice.name)
+            
+            lista_ordem.pop(0)
+        
+
+        if type(end) == str:
+            loop_vertice = self._get_vertice_by_name(end)
+            msg = f"{start} para {loop_vertice.name} com custo de {loop_vertice.value}"
+            percourse = [loop_vertice.name]
+            while(loop_vertice.origin != None):
+                percourse.append(loop_vertice.origin)
+                loop_vertice = self._get_vertice_by_name(loop_vertice.origin)
+            print(msg)
+            percourse.reverse()
+            print(percourse)
+
+            
+
+        
+    
+    def _get_vertice_by_name(self, target) -> Vertice:
+        for vertice in self.vertices:
+            if vertice.name == target:
+                return vertice
+
+    def _get_edges(vertice):
+        pass
 
     def get_graph_vertices(self):
         vertice_list = []
