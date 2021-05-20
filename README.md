@@ -221,26 +221,26 @@ A sua complexidade temporal varia de acordo com a implementação, porém é con
 
 ## Pseudocódigo  
 
-```
-lista_ordem = [];
-lista_ordem.append(vertice de origem);
-Vértice_de_origem = 0;
+```python
+lista_ordem = []
+lista_ordem.append(vertice de origem)
+Vértice_de_origem = 0
 
 while(lista_ordem != []):
-	actual_vert = lista_ordem[0];
+	actual_vert = lista_ordem[0]
 
 	Vertices_conectados = lista com os vertices conectados ao vertice atual;
 
-	Loop(Vertices_conectados):
+	while(Vertices_conectados):
 
-		val_vert = valor do vértice atual;
-		targeted_vert_val = valor do vértice desejado;
-		edge_val = distância para novo vértice;
-		targeted_vert = nome do vertice desejado;
+		val_vert = valor do vértice atual
+		targeted_vert_val = valor do vértice desejado
+		edge_val = distância para novo vértice
+		targeted_vert = nome do vertice desejado
 		lista_ordem.append(targeted_vert)
 
-		if(val_vert + edge_val < targeted_vert_val  || targeted_vert_val  == None):
-			targeted_vert_val = val_vert + edge_val;
+		if(val_vert + edge_val < targeted_vert_val  or targeted_vert_val  == None):
+			targeted_vert_val = val_vert + edge_val
 
 	lista_ordem.pop(0) #remover primeiro elemento da lista para não entrar em loop infinito; 
 ```
