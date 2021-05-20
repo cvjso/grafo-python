@@ -60,6 +60,9 @@ class GraphManager:
     def get_graph_size(self, *args, **kwargs):
         return self.get_act_graph().get_graph_size(*args,**kwargs)
     
+    def distance_dj(self, *args, **kwargs):
+        return self.get_act_graph().distance_dj(*args,**kwargs)
+    
 
 Manager = GraphManager()
 OPTIONS = {
@@ -74,7 +77,8 @@ OPTIONS = {
     "degree": Manager.get_n_vertices_by_name,
     "adjacents vertices": Manager.is_vertices_adjacents,
     "set edge": Manager.set_edge_value_by_edge,
-    "size":Manager.get_graph_size
+    "size":Manager.get_graph_size,
+    "distance": Manager.distance_dj
 }
 
 
@@ -104,10 +108,19 @@ degree X (input | output) -> X é o nome do vertice
 order -> ordem do grafo
 size -> tamanho do grafo
 set edge X Y Z -> X e Y são os vertices da aresta e Z é o novo valor que a aresta terá
+
+--- distance ---
+distance X -> mostra a menor distância entre o vertice de inicio X e os outros vertices, assim como o percurso de cada um
+distance X Y -> mostra a menor distância entre o vertice de inicio X e o vertice final Y, mostrando também seu percurso para chegar à ele
     """
 
     def att_prompt(self):
         self.prompt = f"graph {Manager.graph_index} {Manager.get_act_graph().graph_type} > "
+    
+    def do_distance(self, line):
+        line = line.split()
+        command = "distance"
+        OPTIONS[command](*line)
 
     def do_exit(self, line):
         return True
@@ -177,6 +190,10 @@ set edge X Y Z -> X e Y são os vertices da aresta e Z é o novo valor que a are
                 i = 0
                 while(i < len(parameters)):
                     vertices_connection.append(parameters[i])
+                    try:
+                        parameters[i+1] = int(parameters[i+1])
+                    except ValueError:
+                        pass
                     edges_values.append(parameters[i+1])
                     i += 2
             else:

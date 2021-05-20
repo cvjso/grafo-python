@@ -22,6 +22,7 @@ def main():
 
     # Get distance
     graph.distance_dj('0','4')
+    # graph.distance_dj('0')
 
     # Get edges from vertice validation
     # print(graph.get_vertice_edges('A'))

@@ -41,18 +41,26 @@ class Graph:
             print(msg)
             percourse.reverse()
             print(percourse)
-
-            
-
         
+        else:
+            for loop_vertice in self.vertices:
+                # loop_vertice = self._get_vertice_by_name(end)
+                msg = f"{start} para {loop_vertice.name} com custo de {loop_vertice.value}"
+                percourse = [loop_vertice.name]
+                while(loop_vertice.origin != None):
+                    percourse.append(loop_vertice.origin)
+                    loop_vertice = self._get_vertice_by_name(loop_vertice.origin)
+                print(msg)
+                percourse.reverse()
+                print(percourse)
+
+
+
     
     def _get_vertice_by_name(self, target) -> Vertice:
         for vertice in self.vertices:
             if vertice.name == target:
                 return vertice
-
-    def _get_edges(vertice):
-        pass
 
     def get_graph_vertices(self):
         vertice_list = []
