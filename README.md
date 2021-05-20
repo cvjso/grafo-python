@@ -20,9 +20,9 @@
 
 
 [Algotitmo de Dijkstra](#Algotitmo-de-Dijkstra)  
-- [Como Funciona e complexidade Temporal](#Como-Funciona?)  
+- [Como Funciona e complexidade Temporal](#Como-Funciona)  
 - [Pseudocódigo](#Pseudocódigo)  
-- [Executando o algoritmo](#Como-executar?)  
+- [Executando o algoritmo](#Como-executar)  
 
 
 [Banco de horas](#Banco-de-horas)  
@@ -210,7 +210,7 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 
 Algoritmo criado como solução para o problema do menor caminho, calculando a menor distância de um ponto para todos os outros existentes no grafo.  
 
-## Como Funciona?  
+## Como Funciona
 
 O algoritmo de Dijkstra identifica, a partir de um nó O, qual é o custo mínimo entre esse nó e todos os outros do grafo. No início, o conjunto S contém somente esse nó. A cada passo, selecionamos no conjunto de nós sobrando, o que está mais perto da origem. Depois atualizamos, para cada nó que está sobrando, a sua distância em relação à origem. Se passando pelo novo nó acrescentado, a distância ficar menor, é essa nova distância que será memorizada (O calculo da distancia é feito somando o valor do nó + o valor da aresta).  
 Escolhido um nó como origem da busca, este algoritmo calcula, então, o custo mínimo
@@ -247,7 +247,7 @@ while(lista_ordem != []):
 ```  
 
 
-## **Como executar?**  
+## **Como executar**  
 
 Na prática, escrevemos na shell que foi criada no projeto para:  
 * Executar o comando 'help' para ver lista de comandos;
