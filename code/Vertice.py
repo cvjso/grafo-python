@@ -7,7 +7,10 @@ class Vertice(object):
         self.name = vertice_name
         self.conections = conections
         self.value = value
-    
+        self.origin = None
+
+    def set_origin(self, origin):
+        self.origin = origin
 
     def get_name(self):
         return self.name

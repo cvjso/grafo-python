@@ -3,7 +3,7 @@ class Edge(object):
     def __init__(self, edge_tuple=(), value=None):
         self.edge = edge_tuple
         self.value = value
-    
+
     def get_edge(self):
         return self.edge
     
