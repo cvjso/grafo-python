@@ -22,6 +22,7 @@
 [Algotitmo de Dijkstra](#Algotitmo-de-Dijkstra)  
 - [Como Funciona e complexidade Temporal](#Como-Funciona?)  
 - [Pseudocódigo](#Pseudocódigo)  
+- [Executando o algoritmo](#Como-executar?)  
 
 
 [Banco de horas](#Banco-de-horas)  
@@ -245,6 +246,8 @@ while(lista_ordem != []):
 	lista_ordem.pop(0) #remover primeiro elemento da lista para não entrar em loop infinito; 
 ```  
 
+
+## **Como executar?**  
 
 Na prática, escrevemos na shell que foi criada no projeto para:  
 * Executar o comando 'help' para ver lista de comandos;
