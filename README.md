@@ -18,6 +18,15 @@
 - [Métodos da classe Vertice](#Métodos-da-classe-Vertice)  
 - [Métodos da classe Edge](#Métodos-da-classe-Edge)  
 
+
+[Algotitmo de Dijkstra](#Algotitmo-de-Dijkstra)  
+- [Como Funciona e complexidade Temporal](#Como-Funciona?)  
+- [Pseudocódigo](#Pseudocódigo)  
+
+
+[Banco de horas](#Banco-de-horas)  
+ 
+
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
 # **Intro**
@@ -126,7 +135,14 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
 - **get_edge_value_by_edge(tuple edge_tuple):**
     - **Parâmetros:**  
         - edge_tuple: Tupla que contém os dois vertices que definem a aresta.
-    - **Descrição:** Retorna o valor da aresta.
+    - **Descrição:** Retorna o valor da aresta.  
+
+- **distance_dj(string start, string end=None):**
+    - **Parâmetros:**  
+        - start: Nome do vértice de origem.  
+        - end: Nome do vértice de destino.  
+    - **Descrição:** Retorna o valor da manor distância entre os dois vértices.  
+
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
@@ -184,6 +200,53 @@ Após instaciada a classe Graph é possível dar um nome para os vértices e are
         - value: valor que vai ser atribuido a aresta
     
     - **Descrição:** Define um novo valor para a aresta.
+
+
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+
+# **Algotitmo de Dijkstra**  
+
+Algoritmo criado como solução para o problema do menor caminho, calculando a menor distância de um ponto para todos os outros existentes no grafo.  
+
+## Como Funciona?  
+
+O algoritmo de Dijkstra identifica, a partir de um nó O, qual é o custo mínimo entre esse nó e todos os outros do grafo. No início, o conjunto S contém somente esse nó. A cada passo, selecionamos no conjunto de nós sobrando, o que está mais perto da origem. Depois atualizamos, para cada nó que está sobrando, a sua distância em relação à origem. Se passando pelo novo nó acrescentado, a distância ficar menor, é essa nova distância que será memorizada (O calculo da distancia é feito somando o valor do nó + o valor da aresta).  
+Escolhido um nó como origem da busca, este algoritmo calcula, então, o custo mínimo
+deste nó para todos os demais nós do grafo. O procedimento é iterativo,
+determinando, na iteração 1, o nó mais próximo do nó O, na segunda iteração, o
+segundo nó mais próximo do nó O, e assim sucessivamente, até que em alguma
+iteração todos os n sós sejam atingidos.  
+A sua complexidade temporal varia de acordo com a implementação, porém é concenso geral que em média é de **O(V2)**, onde V é o numero de vértices no grafo.  
+
+## Pseudocódigo  
+
+```
+lista_ordem = [];
+lista_ordem.append(vertice de origem);
+Vértice_de_origem = 0;
+
+while(lista_ordem != []):
+	actual_vert = lista_ordem[0];
+
+	Vertices_conectados = lista com os vertices conectados ao vertice atual;
+
+	Loop(Vertices_conectados):
+
+		val_vert = valor do vértice atual;
+		targeted_vert_val = valor do vértice desejado;
+		edge_val = distância para novo vértice;
+		targeted_vert = nome do vertice desejado;
+		lista_ordem.append(targeted_vert)
+
+		if(val_vert + edge_val < targeted_vert_val  || targeted_vert_val  == None):
+			targeted_vert_val = val_vert + edge_val;
+
+	lista_ordem.pop(0) #remover primeiro elemento da lista para não entrar em loop infinito; 
+```
+
+
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
 
 # **Banco de horas**  
