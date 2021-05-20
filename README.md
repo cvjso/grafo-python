@@ -220,6 +220,8 @@ segundo nó mais próximo do nó O, e assim sucessivamente, até que em alguma
 iteração todos os n sós sejam atingidos.  
 A sua complexidade temporal varia de acordo com a implementação, porém é concenso geral que em média é de **O(V2)**, onde V é o numero de vértices no grafo.  
 
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
 ## Pseudocódigo  
 
 ```python
@@ -246,6 +248,7 @@ while(lista_ordem != []):
 	lista_ordem.pop(0) #remover primeiro elemento da lista para não entrar em loop infinito; 
 ```  
 
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
 ## **Como executar**  
 
